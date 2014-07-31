@@ -21,7 +21,7 @@ if(!$filesystem->exists($base . '/app/config/local/queue.php')) {
 }
 
 if(!$filesystem->exists($base . '/custom_start.php')) {
-    $filesystem->copy(__DIR__ . '/templates/custom_start.php', $base . '/custom_start.php');
+    $filesystem->copy(__DIR__ . '/templates/custom_start_template.php', $base . '/custom_start.php');
 }
 
 if(!$filesystem->exists($base . '/env_boot.php')) {
