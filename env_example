@@ -1,0 +1,9 @@
+DB_HOST=localhost
+DB_USER=someUser
+DB_DRIVER=sqlite
+DB_PASS=somePass
+SQS_KEY=barfoo
+SQS_SECRET=foobar
+SQS_REGION=bar
+SQS_QUEUE_NAME=foo
+BEAN_HOST=localhost

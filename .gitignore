@@ -1,0 +1,16 @@
+.env
+.env*
+:memory
+custom_start.php
+phpmig.php
+.env_boot.php
+app/routes.php
+app/storage/logs/core.log
+app/config/database.php
+app/migrations/2014010114914_UsersTable.php
+app/database/seeds/DatabaseSeeder.php
+app/models/User.php
+database/local.sqlite
+vendor/*
+migrations/20140730153935_OrdersTable.php
+app/models/BaseModel.php
