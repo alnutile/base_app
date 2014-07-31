@@ -1,7 +1,7 @@
 <?php
 
-$app->get('/', function() use ($app) {
-    return $app->json('Hello Worlds');
+$core->getApp()->get('/', function() use ($core) {
+    return $core->getApp()->json('Hello Worlds');
 });
 
-return $app;
+return $core;
