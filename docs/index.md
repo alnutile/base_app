@@ -72,6 +72,13 @@ add more to custom_start.php etc
 
 # Folders
 
+# Seeding Database
+
+Add your seed commands here
+app/database/seeds/AppSeeder.php
+
+and run php setup/seed.php
+
 # Links
 
 # Queue/Worker
