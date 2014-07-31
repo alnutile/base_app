@@ -24,8 +24,8 @@ if(!$filesystem->exists($base . '/custom_start.php')) {
     $filesystem->copy(__DIR__ . '/templates/custom_start_template.php', $base . '/custom_start.php');
 }
 
-if(!$filesystem->exists($base . '/env_boot.php')) {
-    $filesystem->copy(__DIR__ . '/templates/env_boot.php', $base . '/env_boot.php');
+if(!$filesystem->exists($base . '/.env_boot.php')) {
+    $filesystem->copy(__DIR__ . '/templates/env_boot.php', $base . '/.env_boot.php');
 }
 
 if(!$filesystem->exists($base . '/app/routes.php')) {
