@@ -13,7 +13,7 @@ if(!$filesystem->exists($base . '/app/models/BaseModel.php')) {
 }
 
 if(!$filesystem->exists($base . '.env')) {
-    $filesystem->copy(__DIR__ . 'env_example', $base . '.env');
+    $filesystem->copy(__DIR__ . '/templates/env_example', $base . '.env');
 }
 
 if(!$filesystem->exists($base . '/app/config/local/queue.php')) {
