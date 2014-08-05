@@ -4,15 +4,11 @@
         "illuminate/database": "4.2.*",
         "illuminate/queue" : "4.2.*",
         "illuminate/container": "4.2.*",
-        "alnutile/core_app": "*",
+        "symfony/twig-bridge": "~2.3",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "alnutile/core_app": "0.0.1",
         "pda/pheanstalk": "~2.1"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/alnutile/core_app.git"
-        }
-    ],
     "autoload": {
         "classmap": [
             "app/commands",

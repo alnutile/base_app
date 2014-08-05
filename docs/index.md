@@ -2,66 +2,32 @@
 
 Set your environment with a config file in the base folder
 
-To start create
+To start the composer install will setup most of your starter scripts
 
 ~~~
-.env_boot.php
+composer install
 ~~~
 
-And in there
-
-~~~~
-<?php return 'local';
-~~~~
-
-To set the environment settings. This will help in other areas.
+look in setup/templates to see what is made to begin with.
 
 Also .gitignore has a mix of ignored files that are for environment specific settings and to prevent overwrites during install.
-Remove the files from there that you do want to keep in your workflow.
+Remove the files from there that you do want to keep in your workflow. [better setup coming soon]
+
+Lastly setup migration examples and bower
+
+~~~
+bin/phpmig migrate
+php setup/seed.php
+bower install
+~~~
+
+# Server/Vagrant
+‰
+See server.md
 
 # Config
 
-Create a .env file like above in the root of the app and and in there load your settings like
-
-~~~
-S3_USER=me
-S3_TOKEN=foo
-~~~~
-
-Also add /custom_start.php to setup some custom calls
-
-Here is an example
-
-~~~
-<?php
-/**
- * set any custom settings or features
- */
-
-/**
- * Example make a custom basic auth area
- * password = foo
- */
-$app->register(new Silex\Provider\SecurityServiceProvider(), array(
-    'security.firewalls' => [
-        'custom' => array(
-            'pattern' => '^/custom',
-            'http' => true,
-            'users' => array(
-                'admin' => array('ROLE_ADMIN', '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg=='),
-            ),
-        ),
-    ]
-));
-
-/**
- * Set some path to test this out
- */
-$app->get('/custom', function() use ($app){
-
-    return $app->json('Hello Custom Area');
-});
-~~~
+See config.md
 
 # Logging
 
@@ -69,6 +35,10 @@ app/storage/logs
 
 See app/start.php on the setup
 add more to custom_start.php etc
+
+# Bower and Angular
+
+See frontend.md
 
 # Folders
 

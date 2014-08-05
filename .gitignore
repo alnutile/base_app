@@ -15,3 +15,4 @@ database/local.sqlite
 vendor/*
 migrations/20140730153935_OrdersTable.php
 app/models/BaseModel.php
+public/bower_components
