@@ -1,20 +1,37 @@
 <?php
 
-require_once __DIR__.'/vendor/autoload.php';
+//require_once __DIR__.'/vendor/autoload.php';
 use \Phpmig\Adapter,
     \Pimple\Container as Pimple,
     \Phpmig\Adapter\Illuminate\Database as PhpMigIlluminate;
 use Illuminate\Database\Capsule\Manager as Capsule;
+
+$core = require_once __DIR__.'/bootstrap/start.php';
+
+
 $container = new Pimple();
 $container['phpmig.migrations_path'] = __DIR__ . DIRECTORY_SEPARATOR . 'app/database/migrations';
 
 $capsule = new \Illuminate\Database\Capsule\Manager();
 
+
+/**
+ * @TODO Need to make this dynamic
+ * since it shares alot with app/config/{env}/databaes.php
+ * then the config part of it needs to be relative to the db
+ * this one below would only work for mysql
+ */
 $container['config'] = array(
-    'driver' => 'sqlite',
-    'database' => __DIR__ . '/app/storage/local.sqlite',
-    'prefix' => ''
+    'driver'    => getenv('DB_DRIVER'),
+    'host'      => getenv('DB_URL'),
+    'database'  => getenv('DB_NAME'),
+    'username'  => getenv('DB_USER'),
+    'password'  => getenv('DB_PASSWORD'),
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
 );
+
 
 $container['db'] = function($c){
     $capsule = new Capsule();
@@ -30,6 +47,8 @@ $container['schema'] = function($c){
     $capsule->setAsGlobal();
     return $capsule->schema();
 };
+
+
 
 $container['phpmig.adapter'] = function($c) use ($container) {
     return new PhpMigIlluminate($c['db'], 'migrations');

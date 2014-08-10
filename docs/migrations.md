@@ -179,3 +179,4 @@ bin/phpmig status
 # Seeding the db
 
 # How to now setup your app to query this data
+
