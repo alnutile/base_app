@@ -67,6 +67,9 @@ and run php setup/seed.php
 
 See the migrations.md file for more info.
 
+# Command line and boris
+
+Notes and video are here http://www.alfrednutile.info/posts/102
 
 # Seed
 
