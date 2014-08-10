@@ -24,6 +24,10 @@ class AppSeeder {
         /** example user table */
         //1. Clean it out do not remove it though migrations do that
         $this->core->getDatabaseConnection()->getConnection()->table('users')->truncate();
+        //2. when dealing with foreign keys you can delete then truncate
+        //$this->core->getDatabaseConnection()->getConnection()->table('users')->delete();
+        //$this->core->getDatabaseConnection()->getConnection()->table('users')->truncate();
+
         $user = [
             'email' => 'admin@foo.com',
             'password' => 'foo'
